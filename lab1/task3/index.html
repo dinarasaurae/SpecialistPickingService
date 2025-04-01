@@ -1,0 +1,1133 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../task2/">
+      
+      
+        <link rel="next" href="../service/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Task 3 - dinarasaurae's webdev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#13-fastapi-sqlalchemy-alembic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="dinarasaurae&#39;s webdev" class="md-header__button md-logo" aria-label="dinarasaurae's webdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dinarasaurae's webdev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="dinarasaurae&#39;s webdev" class="md-nav__button md-logo" aria-label="dinarasaurae's webdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    dinarasaurae's webdev
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    LAB №1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            LAB №1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../erd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ERD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Task 3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Task 3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Цель работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Цель работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Установка зависимостей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-alembic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Инициалтзация Alembic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Добавление .env в корень проекта
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-connectionpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Обновление connection.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-alembicini" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Обновление alembic.ini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-envpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Обновление env.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-modelspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Обновление models.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Генерация миграции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Проверка
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Применение миграции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Откат последней миграции:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Создание .gitignore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-fastapi-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Запуск FastAPI с .env
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Psychologists Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    LAB №2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LAB №2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/data.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/registration.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/authorization.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/dashboard.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/menu.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/search.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/submission.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/homeworks.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Цель работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Цель работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Установка зависимостей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-alembic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Инициалтзация Alembic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Добавление .env в корень проекта
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-connectionpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Обновление connection.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-alembicini" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Обновление alembic.ini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-envpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Обновление env.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-modelspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Обновление models.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Генерация миграции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Проверка
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Применение миграции
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Откат последней миграции:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Создание .gitignore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-fastapi-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Запуск FastAPI с .env
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="13-fastapi-sqlalchemy-alembic"><strong>Практическая работа 1.3. Реализация миграций в FastAPI с SQLAlchemy и Alembic</strong><a class="headerlink" href="#13-fastapi-sqlalchemy-alembic" title="Permanent link">&para;</a></h1>
+<h2 id="1"><strong>1. Цель работы</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Настройка Alembic, добавление нового поля в таблицу для миграции, использование <code>.env</code> для безопасного хранения данных БД, обновление <code>alembic.ini</code>, чтобы использовать переменные окружения</p>
+<hr />
+<h3 id="21"><strong>2.1 Установка зависимостей</strong><a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>alembic<span class="w"> </span>python-dotenv
+</code></pre></div>
+<strong><code>python-dotenv</code></strong> – позволяет загружать переменные окружения из <code>.env</code> файла.</p>
+<hr />
+<h3 id="21-alembic"><strong>2.1 Инициалтзация Alembic</strong><a class="headerlink" href="#21-alembic" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>alembic<span class="w"> </span>init<span class="w"> </span>migrations
+</code></pre></div>
+Это создаст в корне проекта каталог <code>migrations/</code> со следующей структурой:
+<div class="highlight"><pre><span></span><code>/migrations
+├── versions/       # Каталог с файлами миграций
+├── env.py          # Настройки подключения к БД
+├── README          # Информация о Alembic
+├── script.py.mako  # Шаблон новых миграций
+alembic.ini         # Конфигурация Alembic
+</code></pre></div></p>
+<h3 id="31-env"><strong>3.1 Добавление <code>.env</code> в корень проекта</strong><a class="headerlink" href="#31-env" title="Permanent link">&para;</a></h3>
+<p>Создан <strong><code>.env</code></strong>:
+<div class="highlight"><pre><span></span><code>DATABASE_URL=postgresql://postgres:password@localhost:5432/mydb
+</code></pre></div></p>
+<h3 id="32-connectionpy"><strong>3.2 Обновление <code>connection.py</code></strong><a class="headerlink" href="#32-connectionpy" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.orm</span><span class="w"> </span><span class="kn">import</span> <span class="n">sessionmaker</span><span class="p">,</span> <span class="n">declarative_base</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">DATABASE_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">)</span>
+
+<span class="c1"># Подключение к БД</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">DATABASE_URL</span><span class="p">)</span>
+<span class="n">SessionLocal</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">autocommit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">autoflush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">Base</span> <span class="o">=</span> <span class="n">declarative_base</span><span class="p">()</span>
+</code></pre></div>
+<strong><code>DATABASE_URL</code> не хранится в коде</strong>, а загружается из <code>.env</code>.</p>
+<h3 id="33-alembicini"><strong>3.3 Обновление <code>alembic.ini</code></strong><a class="headerlink" href="#33-alembicini" title="Permanent link">&para;</a></h3>
+<p>В <code>alembic.ini</code>:
+<div class="highlight"><pre><span></span><code><span class="na">sqlalchemy.url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">postgresql://postgres:password@localhost:5432/mydb</span>
+</code></pre></div>
+<strong>На:</strong>
+<div class="highlight"><pre><span></span><code><span class="na">sqlalchemy.url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">%(DATABASE_URL)s</span>
+</code></pre></div>
+Теперь <strong>URL будет загружаться из переменной окружения</strong>.</p>
+<hr />
+<h3 id="4-envpy"><strong>4 Обновление <code>env.py</code></strong><a class="headerlink" href="#4-envpy" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">logging.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">fileConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">engine_from_config</span><span class="p">,</span> <span class="n">pool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">alembic</span><span class="w"> </span><span class="kn">import</span> <span class="n">context</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span>  
+
+<span class="c1"># переменные окружения</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">config</span>
+<span class="n">config</span><span class="o">.</span><span class="n">set_main_option</span><span class="p">(</span><span class="s2">&quot;sqlalchemy.url&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">))</span>
+
+<span class="c1"># логирование Alembic</span>
+<span class="n">fileConfig</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">config_file_name</span><span class="p">)</span>
+
+<span class="c1"># метаданные моделей</span>
+<span class="n">target_metadata</span> <span class="o">=</span> <span class="n">Base</span><span class="o">.</span><span class="n">metadata</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_migrations_offline</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Миграции в offline-режиме (без подключения к БД)&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get_main_option</span><span class="p">(</span><span class="s2">&quot;sqlalchemy.url&quot;</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">target_metadata</span><span class="o">=</span><span class="n">target_metadata</span><span class="p">,</span> <span class="n">literal_binds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dialect_opts</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;paramstyle&quot;</span><span class="p">:</span> <span class="s2">&quot;named&quot;</span><span class="p">})</span>
+
+    <span class="k">with</span> <span class="n">context</span><span class="o">.</span><span class="n">begin_transaction</span><span class="p">():</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">run_migrations</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_migrations_online</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Миграции в online-режиме (с подключением к БД)&quot;&quot;&quot;</span>
+    <span class="n">connectable</span> <span class="o">=</span> <span class="n">engine_from_config</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get_section</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">config_ini_section</span><span class="p">),</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;sqlalchemy.&quot;</span><span class="p">,</span> <span class="n">poolclass</span><span class="o">=</span><span class="n">pool</span><span class="o">.</span><span class="n">NullPool</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">connectable</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="p">,</span> <span class="n">target_metadata</span><span class="o">=</span><span class="n">target_metadata</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">context</span><span class="o">.</span><span class="n">begin_transaction</span><span class="p">():</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">run_migrations</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">is_offline_mode</span><span class="p">():</span>
+    <span class="n">run_migrations_offline</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">run_migrations_online</span><span class="p">()</span>
+</code></pre></div>
+Alembic <strong>читает URL из <code>.env</code></strong> и <strong>видит SQLAlchemy-модели</strong>.</p>
+<h3 id="51-modelspy"><strong>5.1 Обновление <code>models.py</code></strong><a class="headerlink" href="#51-modelspy" title="Permanent link">&para;</a></h3>
+<p>Добавление   поле <code>age</code> в <code>UserDB</code>:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">connection</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserDB</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;users&quot;</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">full_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">phone</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">role</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Новое поле</span>
+</code></pre></div></p>
+<h3 id="52"><strong>5.2 Генерация миграции</strong><a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>alembic<span class="w"> </span>revision<span class="w"> </span>--autogenerate<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Добавлено поле age в users&quot;</span>
+</code></pre></div>
+<strong>Alembic создаст новый файл в <code>migrations/versions/</code></strong>:
+<div class="highlight"><pre><span></span><code>migrations/versions/202403061200_add_age_field.py
+</code></pre></div></p>
+<h3 id="53"><strong>5.3 Проверка</strong><a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">alembic</span><span class="w"> </span><span class="kn">import</span> <span class="n">op</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sa</span>
+
+<span class="c1"># ID ревизии</span>
+<span class="n">revision</span> <span class="o">=</span> <span class="s1">&#39;202403061200&#39;</span>
+<span class="n">down_revision</span> <span class="o">=</span> <span class="s1">&#39;previous_revision_id&#39;</span>
+<span class="n">branch_labels</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">depends_on</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">upgrade</span><span class="p">():</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">sa</span><span class="o">.</span><span class="n">Integer</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">downgrade</span><span class="p">():</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">drop_column</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span>
+</code></pre></div>
+<strong><code>upgrade()</code></strong> добавляет поле <code>age</code>.<br />
+<strong><code>downgrade()</code></strong> удаляет его при откате.</p>
+<h3 id="54"><strong>5.4 Применение миграции</strong><a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>alembic<span class="w"> </span>upgrade<span class="w"> </span>head
+</code></pre></div>
+<h3 id="6"><strong>6 Откат последней миграции:</strong><a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>alembic<span class="w"> </span>downgrade<span class="w"> </span>-1
+</code></pre></div>
+<h3 id="71-gitignore"><strong>7.1 Создание <code>.gitignore</code></strong><a class="headerlink" href="#71-gitignore" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>.env
+</code></pre></div>
+✔ Теперь <code>.env</code> <strong>не попадёт в Git</strong>.</p>
+<h3 id="72-fastapi-env"><strong>7.2 Запуск FastAPI с <code>.env</code></strong><a class="headerlink" href="#72-fastapi-env" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1265 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../erd/">
+      
+      
+        <link rel="next" href="../task2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Task 1 - dinarasaurae's webdev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-fastapi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="dinarasaurae&#39;s webdev" class="md-header__button md-logo" aria-label="dinarasaurae's webdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dinarasaurae's webdev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="dinarasaurae&#39;s webdev" class="md-nav__button md-logo" aria-label="dinarasaurae's webdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    dinarasaurae's webdev
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    LAB №1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            LAB №1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../erd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ERD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Task 1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Task 1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Цель работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Цель работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные элементы
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ход работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ход работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Установка и настройка окружения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Создание структуры проекта
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Реализация временной базы данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Создание моделей данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-api-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Разработка API в main.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Разработка API в main.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1 Получение списка пользователей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.2 Получение пользователя по id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.3 Создание нового пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.4 Удаление пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.5 Обновление данных пользователя
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Работа со специализациями
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Работа со специализациями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.1 Получение списка специализаций
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.2 Добавление специализации психологу
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#363" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.3 Удаление специализации
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Psychologists Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    LAB №2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LAB №2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/data.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/registration.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/authorization.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/dashboard.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/menu.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/search.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/submission.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/homeworks.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Цель работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Цель работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные элементы
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ход работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ход работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Установка и настройка окружения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Создание структуры проекта
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Реализация временной базы данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Создание моделей данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-api-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Разработка API в main.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Разработка API в main.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1 Получение списка пользователей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.2 Получение пользователя по id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.3 Создание нового пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.4 Удаление пользователя
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.5 Обновление данных пользователя
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Работа со специализациями
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Работа со специализациями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.1 Получение списка специализаций
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.2 Добавление специализации психологу
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#363" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.3 Удаление специализации
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="11-fastapi"><strong>Практическая работа 1.1. Создание базового приложения на FastAPI</strong><a class="headerlink" href="#11-fastapi" title="Permanent link">&para;</a></h1>
+<h2 id="1"><strong>1. Цель работы</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Цель данной работы — разработка базового FastAPI-приложения, включающего в себя API для работы с пользователями и специализациями. В ходе выполнения работы требуется:
+- Ознакомиться с основами <strong>FastAPI</strong>.
+- Реализовать <strong>CRUD API</strong> для работы с пользователями и их специализациями.
+- Использовать <strong>Pydantic</strong> для валидации входных данных.</p>
+<hr />
+<h3 id="_1"><strong>Основные элементы</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Объект FastAPI</strong><br />
+<div class="highlight"><pre><span></span><code>   <span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
+   <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Реализация эндпоинтов</strong><br />
+   <div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Добро пожаловать!&quot;</span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li><strong>Запуск сервера</strong><br />
+   <div class="highlight"><pre><span></span><code>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload
+</code></pre></div></li>
+</ol>
+<hr />
+<h2 id="3"><strong>3. Ход работы</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31"><strong>3.1 Установка и настройка окружения</strong><a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Создано виртуальное окружение</strong>:
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w"> </span>
+</code></pre></div></li>
+<li><strong>FastAPI и Uvicorn</strong>:
+   <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>fastapi<span class="o">[</span>all<span class="o">]</span>
+</code></pre></div></li>
+</ol>
+<hr />
+<h3 id="32"><strong>3.2 Создание структуры проекта</strong><a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>/psychologists_service
+    /temp_db.py          
+    /models.py           
+    /main.py            
+</code></pre></div>
+<hr />
+<h3 id="33"><strong>3.3 Реализация временной базы данных</strong><a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RoleType</span>
+
+<span class="n">temp_db</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;seregapirat@gmail.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Serega Pirat&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;+1234567890&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2023-03-01T12:00:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">RoleType</span><span class="o">.</span><span class="n">psychologist</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="s2">&quot;psychologist_data&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;experience&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s2">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;Licensed psychologist with expertise in CBT.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">4.8</span><span class="p">,</span>
+            <span class="s2">&quot;price_per_hour&quot;</span><span class="p">:</span> <span class="mf">100.00</span><span class="p">,</span>
+            <span class="s2">&quot;specializations&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cognitive Behavioral Therapy&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Anxiety Disorders&quot;</span><span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;dinaemae@gmail.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dina Bolnaya&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;+1987654321&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2023-05-10T15:30:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">RoleType</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="s2">&quot;psychologist_data&quot;</span><span class="p">:</span> <span class="kc">None</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<hr />
+<h3 id="34"><strong>3.4 Создание моделей данных</strong><a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>Для валидации данных используется <strong>Pydantic</strong>.  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">EmailStr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">RoleType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="s2">&quot;client&quot;</span>
+    <span class="n">psychologist</span> <span class="o">=</span> <span class="s2">&quot;psychologist&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Specialization</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PsychologistData</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">experience</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">bio</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">rating</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">price_per_hour</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">specializations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Specialization</span><span class="p">]</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
+    <span class="n">full_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">phone</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">role</span><span class="p">:</span> <span class="n">RoleType</span>
+    <span class="n">psychologist_data</span><span class="p">:</span> <span class="n">PsychologistData</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<hr />
+<h3 id="35-api-mainpy"><strong>3.5 Разработка API в <code>main.py</code></strong><a class="headerlink" href="#35-api-mainpy" title="Permanent link">&para;</a></h3>
+<h4 id="351"><strong>3.5.1 Получение списка пользователей</strong><a class="headerlink" href="#351" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Specialization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">temp_db</span><span class="w"> </span><span class="kn">import</span> <span class="n">temp_db</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_users</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">temp_db</span>
+</code></pre></div>
+<h4 id="352-id"><strong>3.5.2 Получение пользователя по <code>id</code></strong><a class="headerlink" href="#352-id" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/user/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">User</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="nb">next</span><span class="p">((</span><span class="n">user</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">temp_db</span> <span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user_id</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="353"><strong>3.5.3 Создание нового пользователя</strong><a class="headerlink" href="#353" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/user&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">User</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_user</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">User</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">User</span><span class="p">:</span>
+    <span class="n">temp_db</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">user</span>
+</code></pre></div>
+<h4 id="354"><strong>3.5.4 Удаление пользователя</strong><a class="headerlink" href="#354" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;/user/delete/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">delete_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">user</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">temp_db</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user_id</span><span class="p">:</span>
+            <span class="n">temp_db</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">204</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;пользователь удалён&quot;</span><span class="p">}</span>
+    <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;пользователь не найден&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="355"><strong>3.5.5 Обновление данных пользователя</strong><a class="headerlink" href="#355" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;/user/</span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">User</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">User</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">temp_db</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">u</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user_id</span><span class="p">:</span>
+            <span class="n">temp_db</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">user</span>
+    <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;не найден&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="36"><strong>3.6 Работа со специализациями</strong><a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<h4 id="361"><strong>3.6.1 Получение списка специализаций</strong><a class="headerlink" href="#361" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/specializations&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="n">Specialization</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_specializations</span><span class="p">():</span>
+    <span class="n">specializations</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">temp_db</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;psychologist_data&quot;</span><span class="p">]:</span>
+            <span class="n">specializations</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s2">&quot;psychologist_data&quot;</span><span class="p">][</span><span class="s2">&quot;specializations&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">specializations</span>
+</code></pre></div>
+<h4 id="362"><strong>3.6.2 Добавление специализации психологу</strong><a class="headerlink" href="#362" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/user/</span><span class="si">{user_id}</span><span class="s2">/specialization&quot;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">User</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_specialization</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">specialization</span><span class="p">:</span> <span class="n">Specialization</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">temp_db</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user_id</span> <span class="ow">and</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;psychologist&quot;</span><span class="p">:</span>
+            <span class="n">user</span><span class="p">[</span><span class="s2">&quot;psychologist_data&quot;</span><span class="p">][</span><span class="s2">&quot;specializations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">specialization</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">user</span>
+    <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Psychologist not found&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="363"><strong>3.6.3 Удаление специализации</strong><a class="headerlink" href="#363" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;/user/</span><span class="si">{user_id}</span><span class="s2">/specialization/</span><span class="si">{specialization_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">delete_specialization</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">specialization_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">temp_db</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user_id</span> <span class="ow">and</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;psychologist&quot;</span><span class="p">:</span>
+            <span class="n">user</span><span class="p">[</span><span class="s2">&quot;psychologist_data&quot;</span><span class="p">][</span><span class="s2">&quot;specializations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;psychologist_data&quot;</span><span class="p">][</span><span class="s2">&quot;specializations&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">specialization_id</span>
+            <span class="p">]</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;deleted&quot;</span><span class="p">}</span>
+    <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Psychologist not found&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
